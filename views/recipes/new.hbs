@@ -1,0 +1,62 @@
+<div class='new-wrapper'>
+    <div class='add-new'>
+
+        <h2> Add a new recipe </h2>
+
+
+        <form action="/recipes/new" method="POST" enctype='multipart/form-data'>
+
+            <div>
+                <div>
+                    <h6>Title:</h6>
+                    <input id="titleInput" type="text" name='theTitle'>
+                </div>
+
+                <div>
+                    <h6>Duration:</h6>
+                    <input id='durationInput' type="text" name='theDuration'>
+                </div>
+
+                <div>
+                    {{!-- <label for='difficultyInput'>Difficulty</label> --}}
+                    <h6>Difficulty:</h6>
+                    <select id='difficultyInput' name='theDifficulty'>
+                        <option value='unspecfied' selected disabled> -- Please select difficulty level -- </option>
+                        <option value='Easy'>Easy</option>
+                        <option value='Hard'>Hard</option>
+                    </select>
+
+                </div>
+                <div>
+                    <h6>Instructions:</h6>
+                    <div id="cookingSteps">
+                        {{!-- <p class="cookingStepsInput"> <input name='instructionInput' id='theInstructions'
+                                type='text'></p> --}}
+                    </div>
+
+                    <button id="addStepButton" type='button' name='add-step'>Add a step</button>
+                </div>
+
+
+
+                {{!-- <p>How many steps? <input type='number' name='numOfSteps'></p> --}}
+
+
+
+            </div>
+
+            {{!-- file upload for images needs to be added below --}}
+            <div>
+                <h6>Image:</h6>
+                <input type="file" name="the-image-input-name">
+            </div>
+
+
+
+            <div class="save-button">
+                <button type="submit">SAVE</button>
+            </div>
+
+        </form>
+    </div>
+</div>
