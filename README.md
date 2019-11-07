@@ -27,7 +27,7 @@
 - [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
-The goal of the project was build a responsive, full stack application using Handlebars and Javascript as front end languages and the Node.js and Express.js environment/framework on the BackEnd. The web app offers users the ability to signup, customize their own profiles, create and edit their own recipes, and comment on each recipes they find delicious!
+The goal of the project was build a responsive, full stack application using Handlebars and JavaScript as front end languages and the Node.js and Express.js environment/framework on the BackEnd. The web app offers users the ability to signup, customize their own profiles, create and edit their own recipes, and comment on each recipes they find delicious!
 
 
 
