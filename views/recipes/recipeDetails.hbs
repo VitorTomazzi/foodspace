@@ -5,63 +5,64 @@
         src='https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1531&q=80'
         alt="avocado image">
 
+    <div class="details-flex row">
+        <div class='details-text col-75'>
 
-    <div class='details-text'>
-
-        {{!-- page back button  --}}
-        <div class='details-actions'>
-            <a href="#" onclick="goBack()"> Back </a>
-            <br>
-
-            {{#if recipe.mine}}
-
-            <a href="/recipes/update/{{recipe._id}}">Edit Recipe</a>
-
-            <form action="/recipes/delete/{{recipe._id}}" method="POST">
-                <input class='form-button' type="submit" value="Delete Recipe">
-            </form>
-
-            {{/if}}
-        </div>
-
-
-
-        <div class='details-card'>
-            <div>
-                <h1> {{recipe.title}}</h1>
-
-                {{#if recipe.author}}
-                <h6> Recipe created by: <a href='/user/{{recipe.author._id}}'>{{recipe.author.username}} </a></h6>
-                {{else}}
-                <h6> Recipe creator unknown </h6>
-                {{/if}}
-
+            {{!-- page back button  --}}
+            <div class='details-actions'>
+                <a href="#" onclick="goBack()"> Back </a>
                 <br>
 
-                <h6>Total Cook Time</h6>
-                <p>{{recipe.duration}} minutes</p>
+                {{#if recipe.mine}}
 
-                <h6>Difficulty</h6>
-                <p>{{recipe.difficulty}}</p>
+                <a href="/recipes/update/{{recipe._id}}">Edit Recipe</a>
+
+                <form action="/recipes/delete/{{recipe._id}}" method="POST">
+                    <input class='form-button' type="submit" value="Delete Recipe">
+                </form>
+
+                {{/if}}
+            </div>
 
 
-                <h6>Instructions</h6>
-                <ol>
-                    {{#each recipe.instructions}}
-                    {{#if this.step}}
-                    <li>{{this.step}}</li>
+
+            <div class='details-card'>
+                <div>
+                    <h1> {{recipe.title}}</h1>
+
+                    {{#if recipe.author}}
+                    <h6> Recipe created by: <a href='/user/{{recipe.author._id}}'>{{recipe.author.username}} </a></h6>
                     {{else}}
-                    <li>{{this}}</li>
+                    <h6> Recipe creator unknown </h6>
                     {{/if}}
-                    {{/each}}
-                </ol>
 
+                    <br>
+
+                    <h6>Total Cook Time</h6>
+                    <p>{{recipe.duration}} minutes</p>
+
+                    <h6>Difficulty</h6>
+                    <p>{{recipe.difficulty}}</p>
+
+
+                    <h6>Instructions</h6>
+                    <ol>
+                        {{#each recipe.instructions}}
+                        {{#if this.step}}
+                        <li>{{this.step}}</li>
+                        {{else}}
+                        <li>{{this}}</li>
+                        {{/if}}
+                        {{/each}}
+                    </ol>
+
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class='details-image'>
-        <img src="{{recipe.image}}" alt="food image">
+        <div class='details-image col-25'>
+            <img src="{{recipe.image}}" alt="food image">
+        </div>
     </div>
 
 </div>
